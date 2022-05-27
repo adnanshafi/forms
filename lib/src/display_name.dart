@@ -15,7 +15,6 @@ class NameInput extends FormzInput<String, NameValidationError> {
   @override
   NameValidationError? validator(String value) {
     if (value.isEmpty) return NameValidationError.empty;
-    if (!s_v.isAlpha(value)) return NameValidationError.notAlpha;
     if (value.length < 3) return NameValidationError.tooShort;
     if (value.length > 20) return NameValidationError.tooLong;
     return null;
